@@ -9,14 +9,10 @@
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/news",
-      "destination": "/api/news.js"
-    },
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
+      "src": "/api/news",
+      "dest": "/api/news.js"
     }
   ]
 }
