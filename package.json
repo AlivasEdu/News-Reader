@@ -8,7 +8,8 @@
     "server:dev": "cd server && node server.js",
     "web:install": "cd web && npm install",
     "web:dev": "cd web && npm run dev",
-    "dev": "concurrently \"npm run server:dev\" \"npm run web:dev\""
+    "dev": "concurrently \"npm run server:dev\" \"npm run web:dev\"",
+    "vercel-build": "cd web && npm install && npm run build && cp -r src ../ && cp index.html ../"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
