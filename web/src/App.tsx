@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import HeadlinesList from './components/HeadlinesList';
 import { fetchNews, Article, NewsResponse } from './lib/newsapi';
 
