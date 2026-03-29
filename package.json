@@ -1,0 +1,16 @@
+{
+  "name": "news-reader",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../web && npm install",
+    "server:install": "cd server && npm install",
+    "server:dev": "cd server && node server.js",
+    "web:install": "cd web && npm install",
+    "web:dev": "cd web && npm run dev",
+    "dev": "concurrently \"npm run server:dev\" \"npm run web:dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
