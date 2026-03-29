@@ -3,15 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install:all": "npm install && cd server && npm install && cd ../web && npm install",
+    "install:all": "npm install && cd server && npm install",
     "server:install": "cd server && npm install",
     "server:dev": "cd server && node server.js",
-    "web:install": "cd web && npm install",
-    "web:dev": "cd web && npm run dev",
-    "dev": "concurrently \"npm run server:dev\" \"npm run web:dev\"",
-    "vercel-build": "cd web && npm install && npm run build && cp -r src ../ && cp index.html ../"
+    "dev": "concurrently \"npm run server:dev\" \"vite\"",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
   }
 }
