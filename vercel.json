@@ -2,23 +2,21 @@
   "version": 2,
   "buildCommand": "cd web && npm install && npm run build",
   "outputDirectory": "web/dist",
+  "framework": "vite",
   "builds": [
     {
       "src": "api/news.js",
       "use": "@vercel/node"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/news",
-      "dest": "/api/news.js"
+      "source": "/api/news",
+      "destination": "/api/news.js"
     },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ]
 }
